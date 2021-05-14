@@ -65,3 +65,4 @@ gem 'forgery'
 
 gem 'will_paginate' # add to gemfile
 gem 'bootstrap-generators'
+gem 'authlogic'

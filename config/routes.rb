@@ -3,3 +3,4 @@ Rails.application.routes.draw do
     resources :comments
   end
 end
+resources :admin_sessions

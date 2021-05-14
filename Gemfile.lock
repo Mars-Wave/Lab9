@@ -47,6 +47,11 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    authlogic (6.4.1)
+      activemodel (>= 5.2, < 6.2)
+      activerecord (>= 5.2, < 6.2)
+      activesupport (>= 5.2, < 6.2)
+      request_store (~> 1.0)
     bindex (0.8.1)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
@@ -140,6 +145,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
+    request_store (1.5.0)
+      rack (>= 1.4)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass (3.7.4)
@@ -194,6 +201,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic
   bootsnap (>= 1.1.0)
   bootstrap-generators
   byebug

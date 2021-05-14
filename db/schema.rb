@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_13_203115) do
+ActiveRecord::Schema.define(version: 2021_05_14_120640) do
+
+  create_table "admins", force: :cascade do |t|
+    t.string "login"
+    t.string "crypted_password", null: false
+    t.string "password_salt", null: false
+    t.string "persistence_token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -22,8 +31,10 @@ ActiveRecord::Schema.define(version: 2021_05_13_203115) do
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.string "author"
+    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_comments_on_book_id"
   end
 
 end
