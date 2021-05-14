@@ -1,7 +1,7 @@
 <h1>Books</h1>
 
 <% for book in @books do %>
-  <h2><%=h book.title %></h2>
+  <h2><%= link_to book.title, books_path(book) %></h2>
   <p><%= book.thoughts %></p>
 <% end %>
 
