@@ -1,5 +1,9 @@
-class BooksController < ApplicationController
-    # notice we've defined a method called index for a BooksController instance. We tie this together with routes
+
+
+class BooksController < ApplicationController 
+    before_filter :login_required, except: [:index, :show]
+  
+
     def index
     #  @books = Book.all # instance variables are prefixed with an @.
       # If we said books = Book.all, we wouldn't be able to access books in the template
@@ -42,6 +46,13 @@ class BooksController < ApplicationController
       book.destroy
       flash[:notice] = "#{book.title} deleted."
       redirect_to books_path
+    end
+
+    def login_required
+      unless current_admin
+        flash[:error] = 'Only logged in admins an access this page.'
+        redirect_to books_path
+      end
     end
 
     private
